@@ -17,6 +17,7 @@ export default function Chat({ session }: any) {
   async function updateChatsSeen(data: any) {
     const modifyData = (updatedChats: any) => {
       return updatedChats.map((profile: any) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { profiles, ...rest } = profile;
         return {
           ...rest,
@@ -61,10 +62,12 @@ export default function Chat({ session }: any) {
       if (error) {
         console.warn(error);
       } else if (data) {
-        data.filter((value) => value.chat_user_id === context.userID);
+        const filteredData = data.filter(
+          (value) => value.chat_user_id === context.userID
+        );
 
-        setChats(data);
-        console.log(data);
+        setChats(filteredData);
+        console.log(filteredData);
 
         if (!updatesRan) {
           updateChatsSeen(data);

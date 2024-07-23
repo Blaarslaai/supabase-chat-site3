@@ -3,6 +3,7 @@ import { GlobalContext } from "./context";
 import { supabase } from "./supabaseClient";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import bg from "./assets/hero.jpg";
 
 export default function Home({ session }: any) {
   const context = useContext(GlobalContext);
@@ -43,7 +44,7 @@ export default function Home({ session }: any) {
     return (
       <>
         <div className="flex justify-center">
-          <span className="loading loading-spinner loading-lg" />
+          <span className="loading loading-spinner loading-lg pt-24" />
         </div>
       </>
     );
@@ -53,7 +54,7 @@ export default function Home({ session }: any) {
         <div
           className="hero min-h-screen"
           style={{
-            backgroundImage: "url(src/assets/hero.jpg)",
+            backgroundImage: `url(${bg})`,
           }}
         >
           <div className="hero-overlay bg-opacity-60"></div>
@@ -93,7 +94,7 @@ export default function Home({ session }: any) {
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage: "url(src/assets/hero.jpg)",
+          backgroundImage: `url(${bg})`,
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
